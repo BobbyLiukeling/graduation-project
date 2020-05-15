@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% load staticfiles %}
+	<head>
+		<title>sentiment analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="static/js/ie/html5shiv.js"></script><![endif]-->
+{#		<link rel="stylesheet" href="../static/css/main.css" />#}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="no-sidebar">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+			<div id="header-wrapper">
+				<header id="header" class="container">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="/">sentiment analysis</a></h1>
+							<!-- <span><h2>weibo text sentiment</h2></span> -->
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<!-- <li class="current"><a href="index.html">Welcome</a></li> -->
+								<!-- <li> -->
+									<!-- <a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li>
+											<a href="#">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li> -->
+								<li class = 'current'><a href="/getinfo">影视资讯获取</a></li>
+								<li><a href="/handleinfo">数据处理与分析</a></li>
+								<li ><a href="/result">结果展示与预测</a></li>
+                                {% if request.user.is_authenticated %}
+                                        <li>{{ request.user.username }}</li>
+                                        {% else %}
+                                        <li><a href="/login" id ="login">登陆</a></li>
+                                    {% endif %}
+							</ul>
+						</nav>
+
+				</header>
+			</div>
+        <p>lla</p>
+        <p>lla</p><!--不显示-->
+
+		<!-- getinfo Form -->
+{#			<form id="getinfo" target="_blank" method="get" action="http://127.0.0.1:8001/#/client/2/schedule"> #}
+                <!-- 提交到当前页面 -->
+{#                <form id="getinfo" target="_blank" method="post" action="/getinfo/">#}
+                <form id="getinfo"  method="post" action="/getinfo/">
+				<input  type="text" name="filmname" id="filmname" placeholder="输入待分析电影名" />
+                <input type="submit" value="提交电影名" />
+                 <a id="start" href="http://127.0.0.1:8001/#/client/1/schedule" target="_blank"
+                    style = "
+                        background: #0090c5;
+                        color: #fff;
+                        border-radius: 6px;
+                        font-weight: 800;
+                        border: 0;
+                        padding: 1em 1.5em;
+                        font-size: 12pt;
+                        line-height: 2.25em;"
+                 >
+                     启动爬虫
+                 </a>
+
+
+                {% csrf_token %}
+			</form>
+
+		<!-- Scripts -->
+
+			<script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.dropotron.min.js'  %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'js/main.js' %}"></script>
+	</body>
+</html>

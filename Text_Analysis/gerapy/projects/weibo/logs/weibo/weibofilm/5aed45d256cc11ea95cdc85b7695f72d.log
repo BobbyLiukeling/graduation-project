@@ -1,0 +1,22 @@
+2020-02-24 14:10:31 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: weibo)
+2020-02-24 14:10:31 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 (tags/v3.7.6:43364a7ae0, Dec 19 2019, 00:42:30) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17134-SP0
+2020-02-24 14:10:31 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'weibo', 'LOG_FILE': 'logs\\weibo\\weibofilm\\5aed45d256cc11ea95cdc85b7695f72d.log', 'NEWSPIDER_MODULE': 'weibo.spiders', 'SPIDER_MODULES': ['weibo.spiders']}
+2020-02-24 14:10:31 [scrapy.extensions.telnet] INFO: Telnet Password: 4b3dc85de8f350a4
+2020-02-24 14:10:31 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-02-24 14:10:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52262/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-02-24 14:10:34 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:52262
+2020-02-24 14:10:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52262 "POST /session HTTP/1.1" 200 830
+2020-02-24 14:10:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:10:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52262/session/7e6fe2831f2a97b8f975e45aae9c3e35/url {"url": "https://m.weibo.cn/quicklogin?r=https%3A%2F%2Fm.weibo.cn%2Fdetail%2F4375850843355381", "sessionId": "7e6fe2831f2a97b8f975e45aae9c3e35"}
+2020-02-24 14:10:40 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52262 "POST /session/7e6fe2831f2a97b8f975e45aae9c3e35/url HTTP/1.1" 200 72
+2020-02-24 14:10:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:10:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52262/session/7e6fe2831f2a97b8f975e45aae9c3e35/element {"using": "xpath", "value": ".//li[@class = 'l-uitem']/a", "sessionId": "7e6fe2831f2a97b8f975e45aae9c3e35"}
+2020-02-24 14:10:42 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52262 "POST /session/7e6fe2831f2a97b8f975e45aae9c3e35/element HTTP/1.1" 200 103
+2020-02-24 14:10:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:10:42 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52262/session/7e6fe2831f2a97b8f975e45aae9c3e35/execute {"script": "arguments[0].click();", "args": [{"ELEMENT": "0.30544446182198715-1", "element-6066-11e4-a52e-4f735466cecf": "0.30544446182198715-1"}], "sessionId": "7e6fe2831f2a97b8f975e45aae9c3e35"}
+2020-02-24 14:10:42 [urllib3.connectionpool] DEBUG: http://127.0.0.1:52262 "POST /session/7e6fe2831f2a97b8f975e45aae9c3e35/execute HTTP/1.1" 200 72
+2020-02-24 14:10:42 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:10:45 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:52262/session/7e6fe2831f2a97b8f975e45aae9c3e35/element {"using": "xpath", "value": ".//iframe[@id = 'ptlogin_iframe']", "sessionId": "7e6fe2831f2a97b8f975e45aae9c3e35"}

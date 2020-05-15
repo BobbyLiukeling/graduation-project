@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% load staticfiles %}
+
+<head>
+	<title>sentiment analysis</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body class="left-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
+
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="/">sentiment analysis</a></h1>
+					<!-- <span><h2>weibo text sentiment</h2></span> -->
+				</div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<!-- <li class="current"><a href="index.html">Welcome</a></li> -->
+						<!-- <li> -->
+						<!-- <a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li>
+											<a href="#">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li> -->
+						<li><a href="/getinfo">影视资讯获取</a></li>
+						<li><a href="/handleinfo">数据处理与分析</a></li>
+						<li class="current"><a href="/result">结果展示与预测</a></li>
+						{% if request.user.is_authenticated %}
+						<li>{{ request.user }}  </li>
+						{% else %}
+						<li><a href="/login" id="login">登陆</a></li>
+						{% endif %}
+					</ul>
+				</nav>
+
+			</header>
+		</div>
+
+		<hr style=" height:0.5%;border:none;border-top: 2px ridge white; width: 70%">
+
+
+
+		<div style="margin: 100px 40px 50px 0">
+			<table cellspacing="0" cellpadding="0" style=" width:71%; margin:0 0 0 17.7%;height: 100% ; color:black">
+				<tr style="background-color: #0073bb; vertical-align:middle ; height: 40px">
+					<th>影视作品</th>
+					<th>数据总量</th>
+					<th>整体评分</th>
+					<th>正向评论占比</th>
+					<th>负向评价占比</th>
+				</tr>
+
+				<tr style="height: 2.3em;vertical-align:bottom ;text-align:center;">
+					<td>{{ all_film.film_name }}</td>
+					<td>{{ all_film.scrapy_totle }}</td>
+					<td>{{ all_film.mean }}</td>
+					<td>{{ pos }}</td>
+					<td>{{ neg }}</td>
+				</tr>
+
+			</table>
+		</div>
+		<div id="main-wrapper" style="background-color:transparent;">
+			<div class="container">
+				<div class="row 200%">
+					<div class="8u 12u$(medium)">
+						<div id="content">
+							<img src="{% static 'scrapy/film_cloud.png' %} " style="width:80%">
+
+						</div>
+					</div>
+					<div class="4u 12u$(medium)">
+						<div id="sidebar" style="margin: 15% 0 0 0">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>评论词云</h3>
+								<p>
+									<h4>从评论中提取关键词，组成词云。</h4>
+								</p>
+								<p>
+									<h4>方便展示电影评论中，用户最常用的词语</h4>
+								</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="main-wrapper" style="background-color:transparent;">
+			<div class="container">
+				<div class="row 200%">
+					<div class="8u 12u$(medium)">
+						<div id="content">
+							<img src="{% static 'scrapy/box.png' %} " style="width:80%">
+
+						</div>
+					</div>
+					<div class="4u 12u$(medium)">
+						<div id="sidebar" style="margin: 15% 0 0 0">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>评论得分箱线图</h3>
+								<p>
+									<h4>从箱线图可以粗略地看出数据是否具有有对称性，分布的分散程度等信息，</h4>
+								</p>
+								<p>
+									<h4>并且可以查看是否出现异常值</h4>
+								</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="main-wrapper" style="background-color:transparent;">
+			<div class="container">
+				<div class="row 200%">
+					<div class="8u 12u$(medium)">
+						<div id="content">
+							<img src="{% static 'scrapy/bar.png' %}" style="width:80%">
+
+						</div>
+					</div>
+					<div class="4u 12u$(medium)">
+						<div id="sidebar" style="margin: 15% 0 0 0">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>评论得分直方图</h3>
+								<p>
+									<h4>直观显示出评论得分的分布情况</h4>
+                                    <h4>{{ comment }}</h4>
+								</p>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="main-wrapper" style="background-color:transparent;">
+			<div class="container">
+				<div class="row 200%">
+					<div class="8u 12u$(medium)">
+						<div id="content">
+							<img src="{% static 'scrapy/pie.png' %}" style="width:80%">
+
+						</div>
+					</div>
+					<div class="4u 12u$(medium)">
+						<div id="sidebar" style="margin: 15% 0 0 0">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>正向、负向评论比例</h3>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div id="main-wrapper" style="background-color:transparent;">
+			<div class="container">
+				<div class="row 200%">
+					<div class="8u 12u$(medium)">
+						<div style="height: 100%">
+                                <h3>正向主题词</h3>
+								<table style=" width:100%; margin:0 0 10% 0;height: 100%; color: black">
+
+                                    <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_1</th>
+                                        {% for i in t11 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+                                <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_2</th>
+                                        {% for i in t12 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+                                <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_3</th>
+                                        {% for i in t13 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+								</table>
+							</div>
+
+                        <div style="height: 100%">
+                        <h3>负向主题词</h3>
+								<table style=" width:100%; margin:0 0 0 0;height: 100%; color: black">
+                                    <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_1</th>
+                                        {% for i in t21 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+                                <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_2</th>
+                                        {% for i in t22 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+                                <tr style="background-color: #0073bb; vertical-align:middle ; height: 50px">
+										<th style="width: 20%">topic_3</th>
+                                        {% for i in t23 %}
+				                            <td > {{ i }}</td>
+                                        {% endfor %}
+									</tr>
+								</table>
+							</div>
+					</div>
+					<div class="4u 12u$(medium)">
+						<div id="sidebar" style="margin: 15% 0 0 0">
+
+							<!-- Sidebar -->
+							<section>
+								<h3>LDA 主题建模结果</h3>
+                                <h4>在对{{ filmname }}进行LDA主题模型建模后得出左边表格中的正负情感主题词</h4>
+								<h4>用户在进行类似于《{{ filmname }}》这类型的’{{ types }}‘电影的生产决策时，可以参考此正负主题词进行生产决策</h4>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!-- Scripts -->
+
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery.dropotron.min.js'  %}"></script>
+		<script src="{% static 'js/skel.min.js' %}"></script>
+		<script src="{% static 'js/util.js' %}"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

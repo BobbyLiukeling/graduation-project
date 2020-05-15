@@ -1,0 +1,92 @@
+2020-05-04 16:22:59 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: weibo)
+2020-05-04 16:22:59 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.7.0, Python 3.7.6 (tags/v3.7.6:43364a7ae0, Dec 19 2019, 00:42:30) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17134-SP0
+2020-05-04 16:22:59 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'weibo', 'LOG_FILE': 'logs\\weibo\\film\\725ae84c8de011eaaa4934f39a004e9c.log', 'NEWSPIDER_MODULE': 'weibo.spiders', 'SPIDER_MODULES': ['weibo.spiders']}
+2020-05-04 16:23:00 [scrapy.middleware] WARNING: Disabled TelnetConsole: TELNETCONSOLE_ENABLED setting is True but required twisted modules failed to import:
+Traceback (most recent call last):
+  File "e:\software\python3.7.6\lib\site-packages\scrapy\extensions\telnet.py", line 15, in <module>
+    from twisted.conch import manhole, telnet
+  File "e:\software\python3.7.6\lib\site-packages\twisted\conch\manhole.py", line 154
+    def write(self, data, async=False):
+                              ^
+SyntaxError: invalid syntax
+
+2020-05-04 16:23:00 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats', 'scrapy.extensions.logstats.LogStats']
+2020-05-04 16:23:03 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57788/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-05-04 16:23:03 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:57788
+2020-05-04 16:23:06 [urllib3.connectionpool] DEBUG: http://127.0.0.1:57788 "POST /session HTTP/1.1" 200 829
+2020-05-04 16:23:06 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 16:23:06 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-05-04 16:23:06 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-05-04 16:23:06 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibo.pipelines.WeiboPipeline']
+2020-05-04 16:23:06 [scrapy.core.engine] INFO: Spider opened
+2020-05-04 16:23:06 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-05-04 16:23:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92> (referer: None)
+2020-05-04 16:23:06 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57788/session/0cddacf96bf6af3bcb024dbc375e6dad/url {"url": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92", "sessionId": "0cddacf96bf6af3bcb024dbc375e6dad"}
+2020-05-04 16:23:08 [urllib3.connectionpool] DEBUG: http://127.0.0.1:57788 "POST /session/0cddacf96bf6af3bcb024dbc375e6dad/url HTTP/1.1" 200 72
+2020-05-04 16:23:08 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 16:23:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57788/session/0cddacf96bf6af3bcb024dbc375e6dad/element {"using": "xpath", "value": ".//ul[contains(@class,'nav-item') and contains(@class,'center')]/li/span[text() = '\u8bdd\u9898']", "sessionId": "0cddacf96bf6af3bcb024dbc375e6dad"}
+2020-05-04 16:23:10 [urllib3.connectionpool] DEBUG: http://127.0.0.1:57788 "POST /session/0cddacf96bf6af3bcb024dbc375e6dad/element HTTP/1.1" 200 102
+2020-05-04 16:23:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 16:23:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57788/session/0cddacf96bf6af3bcb024dbc375e6dad/element/0.9550493502239512-1/click {"id": "0.9550493502239512-1", "sessionId": "0cddacf96bf6af3bcb024dbc375e6dad"}
+2020-05-04 16:23:10 [urllib3.connectionpool] DEBUG: http://127.0.0.1:57788 "POST /session/0cddacf96bf6af3bcb024dbc375e6dad/element/0.9550493502239512-1/click HTTP/1.1" 200 72
+2020-05-04 16:23:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 16:23:12 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:57788/session/0cddacf96bf6af3bcb024dbc375e6dad/execute {"script": "var q=document.documentElement.scrollTop=100000", "args": [], "sessionId": "0cddacf96bf6af3bcb024dbc375e6dad"}
+2020-05-04 16:23:16 [urllib3.connectionpool] DEBUG: http://127.0.0.1:57788 "POST /session/0cddacf96bf6af3bcb024dbc375e6dad/execute HTTP/1.1" 200 268
+2020-05-04 16:23:16 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 16:23:16 [scrapy.core.scraper] ERROR: Spider error processing <GET https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92> (referer: None)
+Traceback (most recent call last):
+  File "e:\software\python3.7.6\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "F:\GitHubCode\Code\Python\Django\Text_Analysis\gerapy\projects\weibo\weibo\spiders\film.py", line 46, in parse
+    self.web.execute_script(js)
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 636, in execute_script
+    'args': converted_args})['value']
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.17134 x86_64)
+
+2020-05-04 16:23:17 [scrapy.core.engine] INFO: Closing spider (finished)
+2020-05-04 16:23:17 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 285,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 3722,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/200': 1,
+ 'elapsed_time_seconds': 10.47797,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2020, 5, 4, 8, 23, 17, 23226),
+ 'log_count/DEBUG': 17,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'log_count/WARNING': 1,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'spider_exceptions/WebDriverException': 1,
+ 'start_time': datetime.datetime(2020, 5, 4, 8, 23, 6, 545256)}
+2020-05-04 16:23:17 [scrapy.core.engine] INFO: Spider closed (finished)

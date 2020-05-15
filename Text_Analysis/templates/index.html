@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% load staticfiles %}
+	<head>
+		<title>sentiment analysis</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="static/js/ie/html5shiv.js"></script><![endif]-->
+		 <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="static/css/ie8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<h1><a href="/">sentiment analysis</a></h1>
+								<!-- <span><h2>weibo text sentiment</h2></span> -->
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+
+									<li><a href="getinfo">影视资讯获取</a></li>
+									<li><a href="handleinfo">数据处理与分析</a></li>
+									<li><a href="result">结果展示与预测</a></li>
+                                    {% if request.user.is_authenticated %}
+                                        <li>{{ request.user }}</li>
+                                        {% else %}
+                                        <li><a href="login" id ="login">登陆</a></li>
+                                    {% endif %}
+
+								</ul>
+							</nav>
+
+					</header>
+				</div>
+         <hr style=" height:0.5%;border:none;border-top: 2px ridge white; width: 70%" >
+
+			<!-- main -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div >
+								<h2>weibo sentiment analysis</h2>
+								<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;舆情监测、分析和决策方法日益成为公司部门关注的焦点。利用信息技术、舆情监测等方面理念、理论及方法对网络舆情的演化发展进行了大量研究。本系统将利用LDA主题模型度影视文化舆情进行主题模型预测从而对相关产业的生产决策进行建议。
+</p>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+		<!-- Scripts -->
+
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+			<script src="{% static 'js/jquery.dropotron.min.js'  %}"></script>
+			<script src="{% static 'js/skel.min.js' %}"></script>
+			<script src="{% static 'js/util.js' %}"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>

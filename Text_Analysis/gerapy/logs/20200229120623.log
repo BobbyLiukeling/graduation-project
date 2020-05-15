@@ -1,0 +1,3 @@
+INFO - 2020-02-29 12:06:26,604 - process: 4856 - scheduler.py - gerapy.server.core.scheduler - 102 - scheduler - successfully synced task with jobs
+INFO - 2020-02-29 12:09:18,765 - process: 4856 - build.py - gerapy.server.core.build - 24 - build - successfully build project weibo to egg file F:\GitHubCode\Code\Python\Django\Text_Analysis\gerapy\projects\weibo\weibo-1.0-py3.7.egg
+INFO - 2020-02-29 12:11:52,808 - process: 4856 - build.py - gerapy.server.core.build - 24 - build - successfully build project weibo to egg file F:\GitHubCode\Code\Python\Django\Text_Analysis\gerapy\projects\weibo\weibo-1.0-py3.7.egg

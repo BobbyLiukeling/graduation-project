@@ -1,0 +1,49 @@
+2020-02-24 14:07:31 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: weibo)
+2020-02-24 14:07:31 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 19.10.0, Python 3.7.6 (tags/v3.7.6:43364a7ae0, Dec 19 2019, 00:42:30) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17134-SP0
+2020-02-24 14:07:31 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'weibo', 'LOG_FILE': 'logs\\weibo\\weibofilm\\ee19fb8256cb11eaaf3dc85b7695f72d.log', 'NEWSPIDER_MODULE': 'weibo.spiders', 'SPIDER_MODULES': ['weibo.spiders']}
+2020-02-24 14:07:31 [scrapy.extensions.telnet] INFO: Telnet Password: 3a505d585d71b360
+2020-02-24 14:07:31 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2020-02-24 14:07:34 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51843/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-02-24 14:07:34 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:51843
+2020-02-24 14:07:36 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51843 "POST /session HTTP/1.1" 200 828
+2020-02-24 14:07:36 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:07:36 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51843/session/99473aa0742da9cb50f8c0317dccb5fe/url {"url": "https://m.weibo.cn/quicklogin?r=https%3A%2F%2Fm.weibo.cn%2Fdetail%2F4375850843355381", "sessionId": "99473aa0742da9cb50f8c0317dccb5fe"}
+2020-02-24 14:07:38 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51843 "POST /session/99473aa0742da9cb50f8c0317dccb5fe/url HTTP/1.1" 200 72
+2020-02-24 14:07:38 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:07:40 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51843/session/99473aa0742da9cb50f8c0317dccb5fe/element {"using": "xpath", "value": ".//li[@class = 'l-uitem']/a", "sessionId": "99473aa0742da9cb50f8c0317dccb5fe"}
+2020-02-24 14:07:40 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51843 "POST /session/99473aa0742da9cb50f8c0317dccb5fe/element HTTP/1.1" 200 102
+2020-02-24 14:07:40 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:07:40 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51843/session/99473aa0742da9cb50f8c0317dccb5fe/execute {"script": "arguments[0].click();", "args": [{"ELEMENT": "0.6681461693299069-1", "element-6066-11e4-a52e-4f735466cecf": "0.6681461693299069-1"}], "sessionId": "99473aa0742da9cb50f8c0317dccb5fe"}
+2020-02-24 14:07:45 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51843 "POST /session/99473aa0742da9cb50f8c0317dccb5fe/execute HTTP/1.1" 200 72
+2020-02-24 14:07:45 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:07:48 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:51843/session/99473aa0742da9cb50f8c0317dccb5fe/element {"using": "xpath", "value": ".//iframe[@id = 'ptlogin_iframe']", "sessionId": "99473aa0742da9cb50f8c0317dccb5fe"}
+2020-02-24 14:07:52 [urllib3.connectionpool] DEBUG: http://127.0.0.1:51843 "POST /session/99473aa0742da9cb50f8c0317dccb5fe/element HTTP/1.1" 200 268
+2020-02-24 14:07:52 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-02-24 14:07:52 [twisted] CRITICAL: Unhandled error in Deferred:
+2020-02-24 14:07:52 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "e:\software\python3.7.6\lib\site-packages\twisted\internet\defer.py", line 1418, in _inlineCallbacks
+    result = g.send(result)
+  File "e:\software\python3.7.6\lib\site-packages\scrapy\crawler.py", line 85, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "e:\software\python3.7.6\lib\site-packages\scrapy\crawler.py", line 108, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "e:\software\python3.7.6\lib\site-packages\scrapy\spiders\__init__.py", line 50, in from_crawler
+    spider = cls(*args, **kwargs)
+  File "F:\GitHubCode\Code\Python\Django\Text_Analysis\gerapy\projects\weibo\weibo\spiders\weibofilm.py", line 65, in __init__
+    self.web.switch_to.frame(self.web.find_element_by_xpath(".//iframe[@id = 'ptlogin_iframe']"))#进入iframe,获取未加载源码
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 394, in find_element_by_xpath
+    return self.find_element(by=By.XPATH, value=xpath)
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 978, in find_element
+    'value': value})['value']
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 321, in execute
+    self.error_handler.check_response(response)
+  File "e:\software\python3.7.6\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=72.0.3626.121)
+  (Driver info: chromedriver=2.38.552522 (437e6fbedfa8762dec75e2c5b3ddb86763dc9dcb),platform=Windows NT 10.0.17134 x86_64)
+

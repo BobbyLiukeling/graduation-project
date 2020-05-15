@@ -1,0 +1,8 @@
+django xadmin
+    username :bobby
+    password :520lkl
+
+
+gerapy
+    username : bobby
+    password : 520lkl520

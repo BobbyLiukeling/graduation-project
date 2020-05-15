@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+{% load staticfiles %}
+
+<head>
+	<title>sentiment analysis</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+</head>
+
+<body class="right-sidebar">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header-wrapper">
+			<header id="header" class="container">
+
+				<!-- Logo -->
+				<div id="logo">
+					<h1><a href="/">sentiment analysis</a></h1>
+					<!-- <span><h2>weibo text sentiment</h2></span> -->
+				</div>
+
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<!-- <li class="current"><a href="index.html">Welcome</a></li> -->
+						<!-- <li> -->
+						<!-- <a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li>
+											<a href="#">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li> -->
+						<li><a href="/getinfo">影视资讯获取</a></li>
+						<li class="current"><a href="/handleinfo">数据处理与分析</a></li>
+						<li><a href="/result">结果展示与预测</a></li>
+						{% if request.user.is_authenticated %}
+						<li>{{ request.user.username }}</li>
+						{% else %}
+						<li><a href="/login" id="login">登陆</a></li>
+						{% endif %}
+					</ul>
+				</nav>
+
+			</header>
+		</div>
+
+ <hr style=" height:0.5%;border:none;border-top: 2px ridge white; width: 70%" >
+
+
+		<div style="font-size: 20px;    color:black; margin: 0 0 0 18%">
+			<h3><b>爬虫共获取{{ scrapy_totle }}条评论,显示前100条</b></h3>
+		</div>
+		<div style="height: 40px">
+			<table style=" width:71%; margin:0 0 0 17.7%;height: 100%; color:black;">
+				<tr style="background-color: #0073bb; vertical-align:middle ; ">
+					<th style="width: 15%">影视作品</th>
+					<th style="width: 15%">评论用户</th>
+					<th style="width: 15%">爬取时间</th>
+					<th style="width: 55%">评论详情</th>
+				</tr>
+			</table>
+		</div>
+		<div style="overflow-x: auto; overflow-y: auto; height: 200px; width:90%; margin:0 8% 0 0;">
+			<table cellspacing="0" cellpadding="0" style=" width:80%; margin:0 0 0 20%; color:black">
+				<!--上右下左-->
+
+				{% for info in all_info %}
+				<tr style="height: 2.3em;vertical-align:bottom ;">
+					<td style="width: 15%">{{ info.filmname }}</td>
+					<td style="width: 15%">{{ info.comment_user }}</td>
+					<td style="width: 15%">{{ info.add_time }}</td>
+					<td style="width: 55%">{{ info.comment_content }}</td>
+				</tr>
+				{% endfor %}
+				{#                <tr>#}
+				{#					<td style="width: 10px">dasdnata</td>#}
+				{#					<td style="width: 10px">data</td>#}
+				{#					<td style="width: 10px">data</td>#}
+				{#					<td style="width: 130px">data</td>#}
+				{#				</tr>#}
+
+			</table>
+		</div>
+
+
+
+		<div style="font-size: 20px;    color:black; margin: 60px 0 0 18%">
+			<h3><b>数据处理结果:</b></h3>
+		</div>
+
+
+		<div style="height: 40px">
+			<table style=" width:71%; margin:0 0 0 17.7%;height: 100%; color:black">
+				<tr style="background-color: #0073bb; vertical-align:middle ; ">
+					<th style="width: 80%">评论详情</th>
+					<th style="width: 20%">情感得分</th>
+				</tr>
+			</table>
+		</div>
+		<div style="overflow-x: auto; overflow-y: auto; height: 200px; width:90%; margin:0 8% 0 0;">
+			<table cellspacing="0" cellpadding="0" style=" width:80%; margin:0 0 0 20%; color:black;">
+				<!--上右下左-->
+
+				{% for info in all_info %}
+				<tr style="height: 2.3em;vertical-align:bottom ;">
+					<td style="width: 80%">{{ info.comment_content }}</td>
+					<td style="width: 20%">{{ info.comment_score }}</td>
+				</tr>
+				{% endfor %}
+				{#                <tr>#}
+				{#					<td style="width: 10px">dasdnata</td>#}
+				{#					<td style="width: 10px">data</td>#}
+				{#					<td style="width: 10px">data</td>#}
+				{#					<td style="width: 130px">data</td>#}
+				{#				</tr>#}
+
+			</table>
+		</div>
+
+
+
+
+
+
+
+		<!-- Scripts -->
+
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/jquery.dropotron.min.js'  %}"></script>
+		<script src="{% static 'js/skel.min.js' %}"></script>
+		<script src="{% static 'js/util.js' %}"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

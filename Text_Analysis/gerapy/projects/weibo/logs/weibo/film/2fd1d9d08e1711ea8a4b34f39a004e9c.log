@@ -1,0 +1,105 @@
+2020-05-04 22:54:49 [scrapy.utils.log] INFO: Scrapy 1.8.0 started (bot: weibo)
+2020-05-04 22:54:49 [scrapy.utils.log] INFO: Versions: lxml 4.4.2.0, libxml2 2.9.5, cssselect 1.1.0, parsel 1.5.2, w3lib 1.21.0, Twisted 18.7.0, Python 3.7.6 (tags/v3.7.6:43364a7ae0, Dec 19 2019, 00:42:30) [MSC v.1916 64 bit (AMD64)], pyOpenSSL 19.1.0 (OpenSSL 1.1.1d  10 Sep 2019), cryptography 2.8, Platform Windows-10-10.0.17134-SP0
+2020-05-04 22:54:49 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'weibo', 'LOG_FILE': 'logs\\weibo\\film\\2fd1d9d08e1711ea8a4b34f39a004e9c.log', 'NEWSPIDER_MODULE': 'weibo.spiders', 'SPIDER_MODULES': ['weibo.spiders']}
+2020-05-04 22:54:50 [scrapy.middleware] WARNING: Disabled TelnetConsole: TELNETCONSOLE_ENABLED setting is True but required twisted modules failed to import:
+Traceback (most recent call last):
+  File "e:\software\python3.7.6\lib\site-packages\scrapy\extensions\telnet.py", line 15, in <module>
+    from twisted.conch import manhole, telnet
+  File "e:\software\python3.7.6\lib\site-packages\twisted\conch\manhole.py", line 154
+    def write(self, data, async=False):
+                              ^
+SyntaxError: invalid syntax
+
+2020-05-04 22:54:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats', 'scrapy.extensions.logstats.LogStats']
+2020-05-04 22:54:53 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"extensions": [], "args": []}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"extensions": [], "args": []}}}
+2020-05-04 22:54:53 [urllib3.connectionpool] DEBUG: Starting new HTTP connection (1): 127.0.0.1:56008
+2020-05-04 22:54:55 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session HTTP/1.1" 200 829
+2020-05-04 22:54:55 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:54:55 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2020-05-04 22:54:55 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2020-05-04 22:54:55 [scrapy.middleware] INFO: Enabled item pipelines:
+['weibo.pipelines.WeiboPipeline']
+2020-05-04 22:54:55 [scrapy.core.engine] INFO: Spider opened
+2020-05-04 22:54:55 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2020-05-04 22:54:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92> (referer: None)
+2020-05-04 22:54:56 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/url {"url": "https://m.weibo.cn/search?containerid=100103type%3D1%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:54:57 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/url HTTP/1.1" 200 72
+2020-05-04 22:54:57 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:54:59 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element {"using": "xpath", "value": ".//ul[contains(@class,'nav-item') and contains(@class,'center')]/li/span[text() = '\u8bdd\u9898']", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:54:59 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element HTTP/1.1" 200 102
+2020-05-04 22:54:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:54:59 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-1/click {"id": "0.7502832341196972-1", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:54:59 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-1/click HTTP/1.1" 200 72
+2020-05-04 22:54:59 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:01 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "var q=document.documentElement.scrollTop=100000", "args": [], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:01 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:01 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:02 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "var q=document.documentElement.scrollTop=100000", "args": [], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:02 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:02 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:03 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "var q=document.documentElement.scrollTop=100000", "args": [], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:03 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:03 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:04 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "var q=document.documentElement.scrollTop=100000", "args": [], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:04 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:04 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/source {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/source HTTP/1.1" 200 86658
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/source {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/source HTTP/1.1" 200 86658
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element {"using": "xpath", "value": ".//div[@class = 'card card11'][1]", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element HTTP/1.1" 200 102
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-2/element {"using": "xpath", "value": ".//div[@class = 'card-list']/div[1]/div/div/div", "id": "0.7502832341196972-2", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-2/element HTTP/1.1" 200 102
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "arguments[0].click();", "args": [{"ELEMENT": "0.7502832341196972-3", "element-6066-11e4-a52e-4f735466cecf": "0.7502832341196972-3"}], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:07 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:07 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:10 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "var q=document.documentElement.scrollTop=40000", "args": [], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:10 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:10 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/source {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/source HTTP/1.1" 200 153702
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/url {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/url HTTP/1.1" 200 281
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element {"using": "xpath", "value": ".//div[@class = 'm-container-max']/div/div/div[4]", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element HTTP/1.1" 200 102
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-4/element {"using": "xpath", "value": ".//footer/div[2]/h4", "id": "0.7502832341196972-4", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/element/0.7502832341196972-4/element HTTP/1.1" 200 102
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/execute {"script": "arguments[0].click();", "args": [{"ELEMENT": "0.7502832341196972-5", "element-6066-11e4-a52e-4f735466cecf": "0.7502832341196972-5"}], "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:13 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/execute HTTP/1.1" 200 72
+2020-05-04 22:55:13 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/url {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/url HTTP/1.1" 200 112
+2020-05-04 22:55:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:14 [selenium.webdriver.remote.remote_connection] DEBUG: GET http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/url {"sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:14 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "GET /session/58237c50207a9663ee2f2646fb320ec1/url HTTP/1.1" 200 112
+2020-05-04 22:55:14 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:14 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/url {"url": "https://m.weibo.cn/search?containerid=231522type%3D1%26t%3D10%26q%3D%23%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92%23&isnewpage=1&luicode=10000011&lfid=100103type%3D38%26q%3D%E4%B8%8A%E6%B5%B7%E5%A0%A1%E5%9E%92%26t%3D0", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}
+2020-05-04 22:55:15 [urllib3.connectionpool] DEBUG: http://127.0.0.1:56008 "POST /session/58237c50207a9663ee2f2646fb320ec1/url HTTP/1.1" 200 72
+2020-05-04 22:55:15 [selenium.webdriver.remote.remote_connection] DEBUG: Finished Request
+2020-05-04 22:55:18 [selenium.webdriver.remote.remote_connection] DEBUG: POST http://127.0.0.1:56008/session/58237c50207a9663ee2f2646fb320ec1/element {"using": "xpath", "value": ".//div[@class = 'm-container-max']/div/div/div[5]", "sessionId": "58237c50207a9663ee2f2646fb320ec1"}

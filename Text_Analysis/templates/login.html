@@ -1,0 +1,51 @@
+﻿
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <title>请登录</title>
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- //for-mobile-apps -->
+{#    <link href="static/css/style.css" rel="stylesheet"/>#}
+{#    "{% static 'assets/css/amazeui.min.css' %}"#}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+</head>
+<body>
+    <!-- main -->
+    <div class="main">
+        <h1>
+            登录系统
+        </h1>
+
+        <form action="/login/" method="post" autocomplete="off">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='mymQDzHWl2REXIfPMg2mJaLqDfaS1sD5' />
+                    <div class="form-group marb20 {% if login_form.errors.username %}errorput{% endif %}">
+                        <label></label>
+                        <input name="username" id="account_l" type="text" placeholder="用户名" />
+                    </div>
+                    <div class="form-group marb8 {% if login_form.errors.password %}errorput{% endif %}">
+                        <label></label>
+                        <input name="password" id="password_l" type="password" placeholder="请输入您的密码" />
+                    </div>
+                    <div class="error btns login-form-tips" id="jsLoginTips">{% for key,error in login_form.errors.items %}{{ error }}{% endfor %}{{ msg }}</div>
+
+                     <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即登录 > " />
+                {% csrf_token %}
+                </form>
+
+
+
+
+    </div>
+    <div class="footer">
+        <p>
+           by liukeling      weibo sentiment analysis
+        </p>
+    </div>
+    <!-- //main -->
+</body>
+</html>
